@@ -17,7 +17,7 @@
 				<div class="collapse navbar-collapse" id="navcol-1">
 					<ul class="navbar-nav mx-auto">
 						<li class="nav-item"><a class="nav-link active" href="{{ route('home') }}">Beranda</a></li>
-						<li class="nav-item"><a class="nav-link" href="{{ route('book') }}">Pelayanan</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ route('pricing') }}">Pelayanan</a></li>
 						<li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Kontak</a></li>
 					</ul>
 					<a class="btn btn-primary shadow" role="button" href="{{ route('contact') }}">Help</a>
@@ -90,9 +90,9 @@
 					<div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
 						<h3 class="fs-6 fw-bold">Menu</h3>
 						<ul class="list-unstyled">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Booking</a></li>
-							<li><a href="#">Contact Us</a></li>
+							<li><a href="{{ route('home') }}">Home</a></li>
+							<li><a href="{{ route('pricing') }}">Booking</a></li>
+							<li><a href="{{ route('contact') }}">Contact Us</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">
@@ -140,8 +140,8 @@
 				</div>
 			</div>
 		</footer>
-		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/js/bs-init.js"></script>
-		<script src="assets/js/bold-and-dark.js"></script>
+		<script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('assets/js/bs-init.js') }}"></script>
+		<script src="{{ asset('assets/js/bold-and-dark.js') }}"></script>
 	</body>
 </html>

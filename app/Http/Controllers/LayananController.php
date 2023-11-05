@@ -66,7 +66,6 @@ class LayananController extends Controller
     public function edit(string $id)
     {
         $layanan = layanan::findOrFail($id);
-
         return view('admin.edit', compact('layanan'));
     }
 

@@ -20,7 +20,7 @@
 					
 					<ul class="navbar-nav mx-auto">
 						<li class="nav-item"><a class="nav-link active" href="{{ route('home') }}">Beranda</a></li>
-						<li class="nav-item"><a class="nav-link" href="{{ route('book') }}">Pelayanan</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ route('pricing') }}">Pelayanan</a></li>
 						<li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Kontak</a></li>
 					</ul>
 					<a class="btn btn-primary shadow" role="button" href="{{ route('contact') }}">Help</a>
@@ -43,7 +43,7 @@
 								<div class="mb-3"><input class="form-control" type="email" id="email-1" name="email" placeholder="Email" /></div>
                                 <div class="mb-3"><input class="form-control" type="text" id="email-1" name="alamat" placeholder="Alamat" /></div>
                                 <div class="mb-3"><input class="form-control" type="text" id="email-1" name="umur" placeholder="Umur" /></div>
-								<div class="mb-3"><input class="form-control" type="text" id="paket" name="paket" placeholder="Paket" value="Dari Layanan" disabled/></div>
+								<div class="mb-3"><input class="form-control" type="text" id="paket" name="paket" placeholder="Paket" disabled value="{{ $layanan->nama_layanan }}"/></div>
 								<div class="mb-3"><textarea class="form-control" id="message-1" name="message" rows="6" placeholder="Keluhan/Alasan memilih paket"></textarea></div>
 								<div><button class="btn btn-primary shadow d-block w-100" name="submit">Booking Sekarang</button></div>
 							</form>
@@ -66,9 +66,9 @@
 					<div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
 						<h3 class="fs-6 fw-bold">Menu</h3>
 						<ul class="list-unstyled">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Booking</a></li>
-							<li><a href="#">Contact Us</a></li>
+							<li><a href="{{ route('home') }}">Home</a></li>
+							<li><a href="{{ route('pricing') }}">Booking</a></li>
+							<li><a href="{{ route('contact') }}">Contact Us</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">

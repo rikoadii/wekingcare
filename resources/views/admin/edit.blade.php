@@ -160,9 +160,9 @@
                                         aria-label=".form-select-lg example">
                                         <option selected>Status Layanan</option>
                                         <option value="Di Booking"
-                                            {{ old('status') == 'Di Booking' ? 'selected' : '' }}>Di Booking</option>
+                                            {{ old('status', $layanan->status) == 'Di Booking' ? 'selected' : '' }}>Di Booking</option>
                                         <option value="Belum Di Booking"
-                                            {{ old('status') == 'Belum Di Booking' ? 'selected' : '' }}>Belum Di
+                                            {{ old('status', $layanan->status) == 'Belum Di Booking' ? 'selected' : '' }}>Belum Di
                                             Booking</option>
                                     </select>
 

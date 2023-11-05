@@ -17,7 +17,7 @@
 				<div class="collapse navbar-collapse" id="navcol-1">
 					<ul class="navbar-nav mx-auto">
 						<li class="nav-item"><a class="nav-link active" href="{{ route('home') }}">Beranda</a></li>
-						<li class="nav-item"><a class="nav-link" href="{{ route('book') }}">Pelayanan</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{ route('pricing') }}">Pelayanan</a></li>
 						<li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Kontak</a></li>
 					</ul>
 					<a class="btn btn-primary shadow" role="button" href="{{ route('contact') }}">Help</a>

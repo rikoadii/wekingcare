@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>Booking - We king Care</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap" />
   </head>
 
@@ -17,11 +17,11 @@
         ><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-            <li class="nav-item"><a class="nav-link active" href="pricing.html">Pelayanan</a></li>
-            <li class="nav-item"><a class="nav-link" href="contacts.html">Kontak</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{{ route('pricing') }}">Pelayanan</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Kontak</a></li>
           </ul>
-          <a class="btn btn-primary shadow" role="button" href="contacts.html">Help</a>
+          <a class="btn btn-primary shadow" role="button" href="{{ route('contact') }}">Help</a>
         </div>
       </div>
     </nav>
@@ -34,100 +34,19 @@
           </div>
         </div>
         <div class="row g-0 row-cols-1 row-cols-md-2 row-cols-xl-3 d-flex align-items-md-center align-items-xl-center justify-content-center">
+          @foreach ($layanans as $layanan)
           <div class="card bg-dark border-dark col mx-2 mb-4" style="width: 20rem; border-radius: 20px">
-            <img src="assets/img/brands/brandcare.jpg" style="height: 250px; border-radius: 20px 20px 0 0" class="card-img-top" alt="..." />
+            <img src="{{ asset('storage/layanan/' . $layanan->gambar) }}" style="height: 250px; border-radius: 20px 20px 0 0" class="card-img-top" alt="..." />
             <div class="card-body" style="border-radius: 0 0 5px 5px">
-              <h5 class="card-title">Card title</h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae distinctio alias vel voluptates accusamus, amet quasi quas quam minus omnis.</p>
-			  <h4>$45</h4>
-			  <a href="book.html"><button class="btn btn-primary d-block w-100" type="button">Button</button></a>
+              <h5 class="card-title">{{ $layanan->nama_layanan }}</h5>
+              <p>{{ $layanan->deskripsi_layanan }}</p>
+			  <h4>{{ $layanan->harga }}</h4>
+			  <a href="{{ route('book', $layanan->id) }}"><button class="btn btn-primary d-block w-100" type="button">Pesan</button></a>
             </div>
           </div>
-
-          <div class="card bg-dark border-dark col mx-2 mb-4" style="width: 20rem; border-radius: 20px">
-            <img src="assets/img/brands/brandcare.jpg" style="height: 250px; border-radius: 20px 20px 0 0" class="card-img-top" alt="..." />
-            <div class="card-body" style="border-radius: 0 0 5px 5px">
-              <h5 class="card-title">Card title</h5>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque quidem repellat earum accusantium expedita dolorem quam error, veritatis quae? Dolores!</p>
-			  <h4>$45</h4>
-			  <a href="book.html"><button class="btn btn-primary d-block w-100" type="button">Button</button></a>
-            </div>
-          </div>
+          @endforeach
 
           
-          <div class="card bg-dark border-dark col mx-2 mb-4" style="width: 20rem; border-radius: 20px">
-            <img src="assets/img/brands/brandcare.jpg" style="height: 250px; border-radius: 20px 20px 0 0" class="card-img-top" alt="..." />
-            <div class="card-body" style="border-radius: 0 0 5px 5px">
-              <h5 class="card-title">Card title</h5>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque quidem repellat earum accusantium expedita dolorem quam error, veritatis quae? Dolores!</p>
-			  <h4>$45</h4> 
-			  <a href="book.html"><button class="btn btn-primary d-block w-100" type="button">Button</button></a>
-            </div>
-          </div>
-
-          
-          <div class="card bg-dark border-dark col mx-2 mb-4" style="width: 20rem; border-radius: 20px">
-            <img src="assets/img/brands/brandcare.jpg" style="height: 250px; border-radius: 20px 20px 0 0" class="card-img-top" alt="..." />
-            <div class="card-body" style="border-radius: 0 0 5px 5px">
-              <h5 class="card-title">Card title</h5>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque quidem repellat earum accusantium expedita dolorem quam error, veritatis quae? Dolores!</p>
-			  <h4>$45</h4>
-              <a href="book.html"><button class="btn btn-primary d-block w-100" type="button">Button</button></a>
-            </div>
-          </div>
-
-          <div class="card bg-dark border-dark col mx-2 mb-4" style="width: 20rem; border-radius: 20px">
-            <img src="assets/img/brands/brandcare.jpg" style="height: 250px; border-radius: 20px 20px 0 0" class="card-img-top" alt="..." />
-            <div class="card-body" style="border-radius: 0 0 5px 5px">
-              <h5 class="card-title">Card title</h5>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque quidem repellat earum accusantium expedita dolorem quam error, veritatis quae? Dolores!</p>
-			  <h4>$45</h4> 
-			  <a href="book.html"><button class="btn btn-primary d-block w-100" type="button">Button</button></a>
-            </div>
-          </div>
-
-          <!-- <div class="col mx-2 mb-4">
-            <div class="card bg-dark border-dark">
-              <div class="card-body p-4">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <h3 class="fw-bold mb-0">Basic Bundle</h3>
-                    <p>Suscipit</p>
-                    <h4 class="display-4 fw-bold">$25</h4>
-                  </div>
-                </div>
-                <div>
-                  <ul class="list-unstyled">
-                    <li class="d-flex mb-2">
-                      <span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon bs-icon-xs me-2"
-                        ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg text-primary">
-                          <path
-                            d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
-                          ></path></svg></span
-                      ><span>Lectus ut nibh quam, felis porttitor.</span>
-                    </li>
-                    <li class="d-flex mb-2">
-                      <span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon bs-icon-xs me-2"
-                        ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg text-primary">
-                          <path
-                            d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
-                          ></path></svg></span
-                      ><span>Ante nec venenatis etiam lacinia.</span>
-                    </li>
-                    <li class="d-flex mb-2">
-                      <span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon bs-icon-xs me-2"
-                        ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg text-primary">
-                          <path
-                            d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
-                          ></path></svg></span
-                      ><span>Porta suscipit netus ad ac.</span>
-                    </li>
-                  </ul>
-                </div>
-                <a href="book.html"><button class="btn btn-primary d-block w-100" type="button">Button</button></a> -->
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -144,9 +63,9 @@
           <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
             <h3 class="fs-6 fw-bold">Menu</h3>
             <ul class="list-unstyled">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Booking</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="{{ route('home') }}">Home</a></li>
+              <li><a href="{{ route('pricing') }}">Booking</a></li>
+              <li><a href="{{ route('contact') }}">Contact Us</a></li>
             </ul>
           </div>
           <div class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">
@@ -194,8 +113,8 @@
         </div>
       </div>
     </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/bold-and-dark.js"></script>
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bs-init.js') }}"></script>
+    <script src="{{ asset('assets/js/bold-and-dark.js') }}"></script>
   </body>
 </html>
